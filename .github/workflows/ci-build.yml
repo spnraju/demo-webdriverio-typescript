@@ -1,0 +1,27 @@
+name: Github-CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  webdriverio:
+    name: ${{ matrix.browser }}
+    runs-on: macos-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        browser: [chrome, firefox]
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+        with:
+          node-version: 16
+      - run: npm install --force
+      - uses: browser-actions/setup-firefox@latest
+        if: matrix.browser == 'firefox'
+      - run: npm run test:${{ matrix.browser }}
