@@ -2,7 +2,7 @@ class Login {
   readonly IPT_USERNAME = '#user-name';
   readonly IPT_PASSWORD = '#password';
   readonly BTN_LOGIN = '#login-button';
-  readonly LOGO_SAUCE = '.bot_column';
+  readonly LOGO_SAUCE = '.login_logo';
 
   async open() {
     await browser.url('/');
