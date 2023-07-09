@@ -25,6 +25,6 @@
     "test:firefox": "wdio run config/wdio.ff.conf.ts",
     "lint": "eslint --ext .ts . --fix",
     "prettier": "prettier **/*.ts --write",
-    "update": "npx npm-check-updates --upgrade && npm install --force; npm audit fix --force"
+    "update": "npm update --save; npm audit fix --force"
   }
 }
