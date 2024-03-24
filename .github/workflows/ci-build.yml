@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: 20
-      - run: npm install --force
+      - run: yarn install
       - uses: browser-actions/setup-firefox@latest
         if: matrix.browser == 'firefox'
-      - run: npm run test:${{ matrix.browser }}
+      - run: yarn run test:${{ matrix.browser }}
